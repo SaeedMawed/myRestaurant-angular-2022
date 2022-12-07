@@ -1,0 +1,113 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+
+
+
+
+@import '../src/assets/variable.scss';
+
+html, body { height: 100%; }
+body { margin: 0;
+    font-family: "Raleway", sans-serif,
+    //font-family: Roboto,
+    "Helvetica Neue", sans-serif;
+    background-color: $black;
+}
+.myContainer{
+    padding: 3rem 7rem;
+    @media screen and (max-width:992px) {
+        padding: 3rem 3rem;
+    }
+    @media screen and (max-width:767px) {
+        padding: 3rem 1rem;
+    }
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+.title{
+   // display: flex;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 10;
+
+    h1{
+
+        border: 1px solid $primary;
+        border-radius: 5px;
+        width: fit-content;
+        padding: .6rem 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        margin: 0 auto;
+        font-size: 26px;
+        color: $white;
+        letter-spacing: 3px;
+        background-color: $black;
+        z-index: 2;
+        &::before{
+            content: '';
+            border: 1px solid $primary;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            z-index: -1;
+        }
+        @media screen and (max-width:767px){
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+    }
+}
+.btn-primary{
+    background-color: $primary;
+    outline: $primary;
+    border-color: $primary;
+    color: $black;
+    &:hover,&:active,&:focus-visible{
+        opacity: .5;
+        background-color: $primary !important;
+        outline: 0 !important;
+        border-color: $primary !important;
+        box-shadow:none !important;
+    }
+
+}
+
+
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+.animated {
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-fill-mode: both
+}
+
+.animatedFadeInUp {
+    opacity: 0
+}
+
+.fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+}

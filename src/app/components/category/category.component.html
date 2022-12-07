@@ -1,0 +1,25 @@
+<div class="category-container myContainer">
+    <h1 class="text-primary">Enjoy with most delicious food and juices</h1>
+    <div class="category-swiper">
+        <div class="swiper-container">
+            <swiper [config]="config"
+          >
+                <ng-template swiperSlide class="swiper-slide border" *ngFor="let category of categoryList">
+                    <button class="category" (click)="setCategoryName(category.name)" [ngClass]="{'active' : category.name.toLowerCase() == category_name.toLowerCase()}">
+                        <img src="../../../assets/imgs/menu/{{category.image}}">
+                        <h2 class="title m-0">{{category.name}}</h2>
+                    </button>
+                </ng-template>
+            </swiper>
+            <div class="swiper-pagination "></div>
+            <div class="swiper-button-next swiper-button-white btn-right"></div>
+            <div class="swiper-button-prev swiper-button-white btn-left"></div>
+
+
+        </div>
+
+    </div>
+
+    <app-meal [meals]="meals"></app-meal>
+
+</div>

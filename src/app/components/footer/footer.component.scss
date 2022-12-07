@@ -1,0 +1,120 @@
+@import '../../../assets/variable.scss';
+.footer-container{
+	.d-grid{
+		display: grid;
+		grid-template-columns: repeat(3,1fr);
+		gap: 1rem;
+		@media screen and (max-width:767px) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@media screen and (max-width:480px) {
+			grid-template-columns: 1fr;
+		}
+		.left-sec{
+			ul{
+				display: flex;
+				flex-direction: column;
+				gap: .5rem;
+				li{
+					padding: .5rem 0;
+
+					a{
+						color: $light;
+						&:hover{
+							color: #555;
+							margin-left: 5px;
+							transition: all .5s;
+						}
+					}
+				}
+			}
+		}
+		.middle-sec{
+			ul{
+				display: flex;
+				flex-direction: column;
+				gap: .5rem;
+				li{
+					padding: 0.5rem 0;
+					margin: 0;
+					color: $light;
+					font-size: 14px;
+					display: flex;
+					align-items: center;
+					&:first-child{
+						padding-top: 0;
+					}
+				}
+				.material-icons-sharp{
+					margin-right: .5rem;
+				}
+			}
+
+		}
+		.right-sec{
+			.d-flex{
+				display: flex;
+				gap: 1rem;
+				a{
+					border-radius: 50%;
+					border: 0;
+					outline: 0;
+					width: 40px;
+					height: 40px;
+					display: flex;
+					align-items: center;
+					align-content: center;
+
+				}
+				i{
+					font-size: 20px;
+					//color: #fff;
+					display: flex;
+					margin: auto;
+					color: $light;
+				}
+				.facebook{
+					background-color: #385898 !important;
+				}
+				.instagram{
+					background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+				}
+				.youtube{
+					background: #FF0000 !important;
+				}
+				.linkedin{
+					background: #0072b1;
+				}
+				.facebook,.youtube,.instagram,.linkedin{
+					background: $black !important;
+					outline: 2px solid $light;
+				}
+			}
+
+
+		}
+		.title{
+			font-size: 20px;
+			color: $primary;
+		}
+	}
+	.bottom-sec{
+		margin-top: 1.5rem;
+		padding-top: .5rem;
+		flex-wrap: wrap;
+		h1{
+			font-size: 16px;
+			color: $white;
+		}
+		a{
+			color: $primary;
+			padding-top: 5px;
+			&:hover{
+				padding-top: 0px !important;
+				transition: all .5s;
+			}
+
+		}
+	}
+}

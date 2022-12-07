@@ -1,0 +1,141 @@
+@import '../../../assets/variable.scss';
+.dishes{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 3rem;
+    @media screen and (max-width:992px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    @media screen and (max-width:767px) {
+        grid-template-columns: 1fr 1fr;
+        padding: 0 2rem;
+    }
+    @media screen and (max-width:480px) {
+        grid-template-columns: 1fr ;
+        padding: 0 2rem;
+    }
+    .cart{
+        position: relative;
+        height: 250px;
+        animation:  fadeUp 1s  duration timing-function delay iteration-count direction fill-mode;
+        .cart-text{
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: $white;
+            z-index: 2;
+            overflow: hidden;
+            h2{
+                margin: 0;
+                padding: 0 .5rem;
+                font-size: 14px;
+            }
+            p{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding: 0 .5rem;
+            }
+            .btn{
+                display: flex;
+                width: 100%;
+                color: $black;
+                border-bottom-left-radius: 25px !important;
+                height: 35px;
+                h3{
+                    margin: 0;
+                    text-align: center;
+                    display: flex;
+                    margin:0 auto;
+                    align-items: center;
+                    span{
+                        padding-left: 3px;
+                        font-size: 16px;
+                    }
+                }
+                &:hover{
+                    opacity: .9;
+                }
+            }
+        }
+        .layout::before{
+            content: '';
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            background-color: $black;
+            opacity: .7;
+            width: 100%;
+            height: 150px;
+            z-index: 1;
+        }
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        border-top-right-radius: 25px;
+        border-bottom-left-radius: 25px;
+    }
+
+}
+.social-btn{
+    position: absolute;
+    height: 40%;
+    top: 40%;
+    right: 0px;
+    transform: translateY(-50%);
+    width: 30px;
+    background-color: $primary;
+    padding: 1rem 0;
+    border-radius: 0px 20px 20px 0;
+    z-index: -1;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+
+    .counter{
+        margin: auto;
+        h4,span{
+            margin: 0;
+            transform: rotate(-90deg);
+        }
+        h4{
+            margin-top: .5rem;
+        }
+    }
+}
+
+
+
+
+.cart:hover{
+    .layout::before{
+        height: 100% !important;
+        transition: all .5s;
+    }
+    .cart-text{
+        transition: all .5s !important;
+        top: 0 !important;
+        height: 100% !important;
+        .btn{
+            position: absolute;
+            bottom: 0;
+        }
+        .dish-name h2{
+            color: $primary;
+        }
+        p{
+            white-space: normal !important;
+            margin: 2px;
+        }
+    }
+    .social-btn{
+        transition: all .5s;
+        right: -31px;
+    }
+}
+
+

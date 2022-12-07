@@ -1,0 +1,35 @@
+@import '../../../assets/variable.scss';
+.branches-container{
+    .branches{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+        text-align: center;
+        @media screen and (max-width:767px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        .branch{
+            position: relative;
+            img{
+                width: 350px;
+                height: 300PX;
+                margin-bottom: 1rem;
+                @media screen and (max-width:767px) {
+                    height: 250px;
+                    width: 100%;
+
+                }
+            }
+            h1,h2{
+                margin-bottom: 5px;
+                color: $white;
+                font-size: 18px;
+                letter-spacing: 1px;
+            }
+            h2{
+                font-size: 16px;
+            }
+        }
+    }
+
+}

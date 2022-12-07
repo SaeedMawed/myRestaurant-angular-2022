@@ -1,0 +1,83 @@
+@import '../../../assets/variable.scss';
+.header{
+    padding: 1.6rem 7rem;
+    position: fixed;
+    z-index: 15;
+    width: 100%;
+    left: 0;
+    top: 0;
+
+    //backdrop-filter: blur(3px) saturate(70%);
+    .container-fluid{
+        padding: 0;
+    }
+
+
+    @media screen and (max-width:767px) {
+        padding: .5rem .75rem !important;
+        background-color: $black;
+        box-shadow: 0 2px 2px $gray;
+        .navbar-toggler-icon{
+            width: 20px;
+            height: 20px;
+        }
+
+    }
+    .navbar{
+        background: transparent;
+        .material-icons-sharp{
+            color: $primary;
+        }
+    }
+    .navbar-brand{
+        font-size: 32px;
+        letter-spacing: 5px;
+        @media screen and (max-width:767px){
+            font-size: 20px;
+            letter-spacing: 2px;
+            color: $primary !important;
+        }
+    }
+    a{
+        font-size: 16px;
+        color: #fff;
+    }
+}
+.navbar-nav{
+    margin-left: auto;
+    gap: 1.6rem;
+    @media screen and (max-width:767px) {
+        gap: .5rem;
+        margin-top: .5rem;
+    }
+    .nav-item{
+        &:hover{
+            margin-top: -5px;
+            transition: all .3s;
+            @media screen and (max-width:992px) {
+                margin-top: 0;
+                margin-left: 10px;
+
+            }
+        }
+    }
+}
+
+.header_change{
+    background-color: #000 !important;
+    padding: .5rem 7rem;
+    transition: all .3s ;
+    box-shadow: 0 2px 2px #333;
+    .navbar-brand{
+        color: $primary;
+    }
+    a{
+        color: $light;
+    }
+    .card-icon{
+        color: $light  !important;
+    }
+    @media screen and (max-width:992px) {
+        padding: .5rem 3rem;
+    }
+}

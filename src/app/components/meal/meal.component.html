@@ -1,0 +1,25 @@
+<div class="mael-container">
+    <div class="dishes mt-5">
+        <div class="cart animated animatedFadeInUp fadeInUp" *ngFor="let meal of meals">
+            <img src="../../../assets/imgs/menu/{{meal.image}}" alt="">
+            <div class="layout"></div>
+            <div class="cart-text">
+                <div class="dish-name"><h2>{{meal.name}}</h2></div>
+                <div class="dish-desc"><p>{{meal.description}}</p></div>
+                <div class="price"><h2>Price<strong style="margin-right:2px; "> {{meal.price}}</strong>$</h2></div>
+                <button class="btn rounded-0 btn-primary"><h3>add to cart<span class="material-icons-sharp">
+                    add
+                    </span></h3></button>
+            </div>
+            <div class="social-btn">
+                <div class="counter">
+                    <span class="material-icons-sharp">
+                        favorite
+                    </span>
+
+                    <h4>{{meal.likes}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

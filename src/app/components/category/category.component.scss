@@ -1,0 +1,145 @@
+
+@import '~swiper/scss';
+@import '~swiper/scss/navigation';
+@import '~swiper/scss/pagination';
+@import '../../../assets/variable.scss';
+.category-container{
+    margin-top: 3rem;
+    position: relative;
+    .text-primary{
+        color: $primary !important;
+        font-size: 18px;
+        text-align: center;
+        padding-top: 5px;
+        animation: upMove .8s infinite both;
+        height: 40px;
+        margin: 0;
+    }
+    .category-swiper{
+        position: sticky;
+        top: 60px;
+        background-color: $black;
+        z-index: 10;
+        box-shadow: 0 4px 2px -2px $primary;
+        .swiper-container{
+            padding: 1rem 0;
+            position: relative;
+        }
+        .swiper-wrapper{
+            gap: 1rem;
+            padding-top: 10px;
+            .swiper-slide{
+                width: 100%;
+                margin: 0 !important;
+                border: 0 !important;
+                .category{
+                    background-color: transparent;
+                    border: 0;
+                    color: $light;
+                    &:hover ,&:active{
+
+                        img{
+                            outline: 5px solid $primary;
+                            transition: all .3s;
+
+                        }
+                        .title {
+                            color: $primary;
+                            transition: all .3s;
+                        }
+                    }
+                }
+                .active {
+                    img{
+                        outline: 5px solid $primary;
+                    }
+                    .title{
+                        color: $primary;
+                    }
+                }
+            }
+            img{
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                margin-bottom: .5rem;
+            }
+        }
+
+        .swiper-button-white {
+            position: absolute;
+            top: 55%;
+            width: 30px;
+            height: 50px;
+
+            color: $black;
+            border-radius: 5px;
+            background-color: $primary;
+            transform: translateY(-50%);
+            &:after{
+                font-size: 30px;
+                color: $black;
+
+            }
+          }
+          .btn-left{
+            &:after{
+                animation: goleft .8s infinite both;
+            }
+            left: -10px;
+          }
+          .btn-right{
+            &:after{
+                animation: goright .8s infinite both;
+            }
+            right: -10px !important;
+          }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /************** animations ***************/
+  @keyframes goleft {
+    0% {
+        margin-left: 0;
+    }
+    50%{
+        margin-left: -5px;
+    }
+
+  }
+
+  @keyframes goright {
+    0% {
+        margin-left: 0;
+    }
+    50%{
+        margin-left: 5px;
+    }
+
+  }
+
+  @keyframes upMove {
+    0%{
+        padding-top: 5px;
+    }
+    50%{
+        padding-top: 0px;
+    }
+  }
+

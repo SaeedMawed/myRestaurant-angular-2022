@@ -1,0 +1,20 @@
+.gallery-container{
+    .food-imgs{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 1rem;
+        @media screen and (max-width:767px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        .cart{
+            img{
+                height: 300px;
+                width: 100%;
+                @media screen and (max-width:767px) {
+                    height: 200px;
+                }
+            }
+
+        }
+    }
+}
