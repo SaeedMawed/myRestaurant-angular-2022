@@ -165,6 +165,7 @@ export class CategoryComponent implements OnInit {
   }
 
   setCategoryName(name:string){
+    window.scrollTo(0,70);
     if (name.toLowerCase() == "all"){
       this.meals=this.mealList;
     }
@@ -179,6 +180,7 @@ export class CategoryComponent implements OnInit {
       this.meals = list;
     }
     this.category_name=name;
+
 
   }
 
