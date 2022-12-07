@@ -17,14 +17,9 @@ export class CategoryComponent implements OnInit {
   category_name:string = "All";
   categoryList:any=[
     {
-      "id":3,
+      "id":1,
       "name":"All",
       "image":"all.webp"
-    },
-    {
-      "id":2,
-      "name":"Juices",
-      "image":"juices.jpg"
     },
     {
       "id":3,
@@ -48,6 +43,22 @@ export class CategoryComponent implements OnInit {
       "id":6,
       "name":"Western food",
       "image":"western-food.jpg"
+    },
+    {
+
+      "id":7,
+      "name":"Salad",
+      "image":"Salad.jpg"
+    },
+    {
+      "id":8,
+      "name":"Juices",
+      "image":"juices.jpg"
+    },
+    {
+      "id":9,
+      "name":"Soup",
+      "image":"Soup.jpg"
     }
 
 
@@ -152,6 +163,24 @@ export class CategoryComponent implements OnInit {
       "description":"200 Gram Homus, cucumber, tomato, olive oil",
       "image":"homus.jpg",
       "likes":625
+    },
+    {
+
+      "name":"Caesar Salad",
+      "price":5,
+      "category_name":"Salad",
+      "description":"chopped romaine lettuce and garlicky croutons, tossed in a creamy dressing made with eggs, olive oil, lemon, Parmesan, Worcestershire sauce, and anchovies",
+      "image":"caesar-salad.jpg",
+      "likes":185
+    },
+    {
+
+      "name":"Spaghetti Squash Soup",
+      "price":10,
+      "category_name":"Soup",
+      "description":" large spaghetti squash halved lengthwise, Onion & Garlic,Jalapeño, Curry Paste, Olive Oil ",
+      "image":"spaghetti-squash-soup.jpg",
+      "likes":12
     }
   ]
 
@@ -162,6 +191,7 @@ export class CategoryComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    window.scrollTo(0,0);
   }
 
   setCategoryName(name:string){
@@ -190,7 +220,7 @@ export class CategoryComponent implements OnInit {
     direction: 'horizontal',
     slidesPerView: 1,
     //spaceBetween: 20,
-    loop: true,
+    loop: false,
     watchOverflow: true,
 
     navigation: {

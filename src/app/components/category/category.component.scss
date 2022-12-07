@@ -82,6 +82,10 @@
 
             }
           }
+
+          .swiper-button-disabled{
+            opacity: 0 !important;
+          }
           .btn-left{
             &:after{
                 animation: goleft .8s infinite both;
