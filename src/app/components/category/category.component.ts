@@ -22,6 +22,11 @@ export class CategoryComponent implements OnInit {
       "image":"all.webp"
     },
     {
+      "id":2,
+      "name":"Offers",
+      "image":"offers.png"
+    },
+    {
       "id":3,
       "name":"Sandwish",
       "image":"sandwish.jpeg"
@@ -112,7 +117,8 @@ export class CategoryComponent implements OnInit {
       "category_name":"Sandwish",
       "description":"150 grams of lamb meat, cheddar cheese, lettuce, onions, tomatoes",
       "image":"cheeseburgers.webp",
-      "likes":552
+      "likes":552,
+      "offer":20
     },
     {
       "name":"ChickenBurger",
@@ -128,7 +134,8 @@ export class CategoryComponent implements OnInit {
       "category_name":"Western food",
       "description":"200 grams of chicken meat, rice ",
       "image":"Super-Crispy-Fried-Chicken-Rice-Bowl.jpg",
-      "likes":202
+      "likes":202,
+      "offer":20
     }
     ,
     {
@@ -137,7 +144,8 @@ export class CategoryComponent implements OnInit {
       "category_name":"Western food",
       "description":"200 grams of chicken meat ",
       "image":"crispy-fried-chicken-.jpg",
-      "likes":57
+      "likes":57,
+      "offer":15
     }
     ,
     {
@@ -180,7 +188,8 @@ export class CategoryComponent implements OnInit {
       "category_name":"Soup",
       "description":" large spaghetti squash halved lengthwise, Onion & Garlic,Jalapeño, Curry Paste, Olive Oil ",
       "image":"spaghetti-squash-soup.jpg",
-      "likes":12
+      "likes":12,
+      "offer":10
     }
   ]
 
@@ -195,9 +204,19 @@ export class CategoryComponent implements OnInit {
   }
 
   setCategoryName(name:string){
-    window.scrollTo(0,70);
+    window.scrollTo(0,225);
     if (name.toLowerCase() == "all"){
       this.meals=this.mealList;
+    }
+    else if(name.toLowerCase() == "offers") {
+      const list:any=[];
+      for (let i = 0 ; i<this.mealList.length;i++){
+        if(this.mealList[i].offer != null){
+          console.log(this.mealList[i]);
+          list.push(this.mealList[i]);
+        }
+      }
+      this.meals = list;
     }
     else {
       const list:any=[];
@@ -206,7 +225,6 @@ export class CategoryComponent implements OnInit {
           list.push(this.mealList[i]);
         }
       }
-
       this.meals = list;
     }
     this.category_name=name;

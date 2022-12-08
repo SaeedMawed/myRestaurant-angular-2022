@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
 import { AdminComponent } from './admin/admin.component';
-import { MenuComponent } from './pages/menu/menu.component';
 import { TopSectionComponent } from './components/top-section/top-section.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AboutComponent } from './components/about/about.component';
@@ -20,14 +19,28 @@ import { CategoryComponent } from './components/category/category.component';
 
 import { SwiperModule } from 'swiper/angular';
 import { MealComponent } from './components/meal/meal.component';
-import { CardComponent } from './pages/card/card.component'
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ForbiddenComponent } from './pages/forbidden/forbidden.component';
+import { UserComponent } from './pages/user/user.component';
+
+
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+
+
+import { AuthGuard } from './_auth/auth.guard';
+import { AuthInterceptor } from './_auth/auth.interceptor';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AdminComponent,
-    MenuComponent,
     TopSectionComponent,
     HeaderComponent,
     AboutComponent,
@@ -37,16 +50,32 @@ import { CardComponent } from './pages/card/card.component'
     FooterComponent,
     CategoryComponent,
     MealComponent,
-    CardComponent
+    AboutUsComponent,
+    CartComponent,
+    LoginComponent,
+    ForbiddenComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
-    SwiperModule
+    SwiperModule,
+    MatProgressSpinnerModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass:AuthInterceptor,
+      multi:true
+    },
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

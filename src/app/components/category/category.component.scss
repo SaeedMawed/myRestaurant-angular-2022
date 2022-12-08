@@ -4,16 +4,22 @@
 @import '~swiper/scss/pagination';
 @import '../../../assets/variable.scss';
 .category-container{
-    margin-top: 3rem;
+    margin-top: 10rem;
     position: relative;
     .text-primary{
         color: $primary !important;
         font-size: 18px;
         text-align: center;
         padding-top: 5px;
-        animation: upMove .8s infinite both;
+        @media screen and (min-width:767px) {
+            animation: upMoveLargeScreen 3s infinite both;
+        }
+        @media screen and (max-width:767px) {
+            animation: upMoveSmallScreen 3s infinite both;
+        }
         height: 40px;
         margin: 0;
+        margin-bottom: 4rem;
     }
     .category-swiper{
         position: sticky;
@@ -21,8 +27,9 @@
         background-color: $black;
         z-index: 10;
         box-shadow: 0 4px 2px -2px $primary;
+        padding-bottom: 5px;
         .swiper-container{
-            padding: 1rem 0;
+            padding-top: 15px;
             position: relative;
         }
         .swiper-wrapper{
@@ -59,16 +66,23 @@
                 }
             }
             img{
-                width: 150px;
-                height: 150px;
+                width: 135px;
+                height: 135px;
                 border-radius: 50%;
-                margin-bottom: .5rem;
+                margin-bottom: 2px;
+                @media screen and (max-width:767px) {
+                    //width: 125px;
+                    //height: 125px;
+                }
+            }
+            .title {
+                font-size: 14px;
             }
         }
 
         .swiper-button-white {
             position: absolute;
-            top: 55%;
+            top: 120px;
             width: 30px;
             height: 50px;
 
@@ -138,12 +152,29 @@
 
   }
 
-  @keyframes upMove {
+  @keyframes upMoveLargeScreen {
     0%{
         padding-top: 5px;
     }
     50%{
         padding-top: 0px;
+        font-size: 28px;
+        letter-spacing: 4px;
+
+
+    }
+  }
+
+  @keyframes upMoveSmallScreen {
+    0%{
+        padding-top: 5px;
+    }
+    50%{
+        padding-top: 0px;
+        font-size: 18px;
+        letter-spacing: 1px;
+
+
     }
   }
 

@@ -6,22 +6,32 @@
     width: 100%;
     left: 0;
     top: 0;
-
-    //backdrop-filter: blur(3px) saturate(70%);
+    backdrop-filter: blur(3px) saturate(70%);
     .container-fluid{
         padding: 0;
     }
 
-
+    @media screen and (max-width:992px) {
+        padding: 1.6rem 3rem;
+    }
     @media screen and (max-width:767px) {
         padding: .5rem .75rem !important;
         background-color: $black;
         box-shadow: 0 2px 2px $gray;
-        .navbar-toggler-icon{
-            width: 20px;
-            height: 20px;
-        }
 
+
+    }
+    .navbar-toggler{
+        border: none !important;
+        &:focus,&:focus-visible{
+            outline: 0 !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+    }
+    .navbar-toggler-icon{
+        width: 20px;
+        height: 20px;
     }
     .navbar{
         background: transparent;
@@ -40,13 +50,13 @@
     }
     a{
         font-size: 16px;
-        color: #fff;
+        color: $primary;
     }
 }
 .navbar-nav{
     margin-left: auto;
     gap: 1.6rem;
-    @media screen and (max-width:767px) {
+    @media screen and (max-width:992px) {
         gap: .5rem;
         margin-top: .5rem;
     }
@@ -64,10 +74,10 @@
 }
 
 .header_change{
-    background-color: #000 !important;
+    background-color: $black !important;
     padding: .5rem 7rem;
     transition: all .3s ;
-    box-shadow: 0 2px 2px #333;
+    box-shadow: 0 2px 2px $gray;
     .navbar-brand{
         color: $primary;
     }
@@ -76,8 +86,13 @@
     }
     .card-icon{
         color: $light  !important;
+        margin-top: -2px;
     }
     @media screen and (max-width:992px) {
         padding: .5rem 3rem;
     }
+}
+
+.card-icon{
+    margin-top: -2px;
 }
