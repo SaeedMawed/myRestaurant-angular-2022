@@ -12,14 +12,12 @@
     }
 
     @media screen and (max-width:992px) {
-        padding: 1.6rem 3rem;
+        padding: 0rem 3rem;
     }
     @media screen and (max-width:767px) {
-        padding: .5rem .75rem !important;
+        padding: 0rem .75rem !important;
         background-color: $black;
         box-shadow: 0 2px 2px $gray;
-
-
     }
     .navbar-toggler{
         border: none !important;
@@ -41,7 +39,8 @@
     }
     .navbar-brand{
         font-size: 32px;
-        letter-spacing: 5px;
+        letter-spacing: 3px;
+
         @media screen and (max-width:767px){
             font-size: 20px;
             letter-spacing: 2px;
@@ -75,7 +74,7 @@
 
 .header_change{
     background-color: $black !important;
-    padding: .5rem 7rem;
+    padding: 2px 7rem 0 !important;
     transition: all .3s ;
     box-shadow: 0 2px 2px $gray;
     .navbar-brand{
@@ -89,10 +88,26 @@
         margin-top: -2px;
     }
     @media screen and (max-width:992px) {
-        padding: .5rem 3rem;
+        padding: 0rem 3rem !important;
+    }
+    @media screen and (max-width:767px) {
+        padding: 0rem .75rem !important;
     }
 }
 
 .card-icon{
     margin-top: -2px;
+}
+
+.navbar-brand{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    span{
+        text-align: center;
+        font-size: 12px;
+        letter-spacing: 2px !important;
+
+    }
 }

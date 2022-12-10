@@ -5,13 +5,13 @@
 
 
 
-@import '../src/assets/variable.scss';
+@import 'assets/variable.scss';
 
 html, body { height: 100%; }
 body { margin: 0;
-    font-family: "Raleway", sans-serif,
-    //font-family: Roboto,
-    "Helvetica Neue", sans-serif;
+    //font-family: "Raleway", sans-serif ;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    //font-family: 'Open Sans', sans-serif;
     background-color: $black;
 }
 .myContainer{
@@ -48,7 +48,7 @@ a{
         text-align: center;
         margin: 0 auto;
         font-size: 26px;
-        color: $white;
+        color: $light;
         letter-spacing: 3px;
         background-color: $black;
         z-index: 2;
@@ -73,11 +73,12 @@ a{
     border-color: $primary;
     color: $black;
     &:hover,&:active,&:focus-visible{
-        opacity: .5;
+        opacity: .9;
         background-color: $primary !important;
         outline: 0 !important;
         border-color: $primary !important;
         box-shadow:none !important;
+        color: $black !important;
     }
 
 }

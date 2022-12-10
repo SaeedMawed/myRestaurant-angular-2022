@@ -16,6 +16,8 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {}
 
+
+  showRegister:boolean=false;
   ngOnInit(): void {}
 
   login(loginForm: NgForm) {
@@ -35,6 +37,10 @@ export class LoginComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  toggleRegister(){
+    this.showRegister = !this.showRegister;
   }
 }
 

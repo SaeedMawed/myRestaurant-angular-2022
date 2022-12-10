@@ -4,19 +4,22 @@
             <img src="assets/imgs/menu/{{meal.image}}" alt="">
             <div class="layout"></div>
             <div class="cart-text">
-                <div class="dish-name"><h2>{{meal.name}}</h2></div>
+                <div class="dish-name"><h2 class="dish-h">{{meal.name}}</h2></div>
                 <div class="dish-desc"><p>{{meal.description}}</p></div>
                 <ng-container *ngIf="meal.offer == null">
                     <div class="price"><h2>Price<strong style="margin-right:2px; "> {{meal.price}}</strong>$</h2></div>
                 </ng-container>
                 <ng-container *ngIf="meal.offer != null">
-                    <div class="price"><h2>Discount {{meal.offer}}%</h2></div>
-                    <div class="price"><h2>Price<del>{{meal.price}}$</del><strong style="margin-right:2px; "> {{meal.price - meal.price * meal.offer / 100}}$</strong></h2></div>
+                    <div class="price">
+                        <h2>Discount {{meal.offer}}%</h2>
+                        <h2>Price<del>{{meal.price}}$</del><strong style="margin-right:2px; "> {{meal.price - meal.price * meal.offer / 100}}$</strong></h2>
+                    </div>
                 </ng-container>
-                <button class="btn rounded-0 btn-primary"><h3>add to cart<span class="material-icons-sharp">
-                    add
-                    </span></h3></button>
+
             </div>
+            <button class="btn rounded-0 btn-primary"><h3>add to cart<span class="material-icons-sharp">
+                add
+                </span></h3></button>
             <div class="social-btn">
                 <div class="counter">
                     <span class="material-icons-sharp">

@@ -19,19 +19,35 @@
         position: relative;
         height: 250px;
         animation:  fadeUp 1s  duration timing-function delay iteration-count direction fill-mode;
+
         .cart-text{
             width: 100%;
+            height: 115px;
             position: absolute;
             left: 0;
-            bottom: 0;
-            width: 100%;
-            color: $white;
+            top: 100px;
+            color: $light;
             z-index: 2;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: .25rem;
+            padding-top: .5rem;
+            transition: all .5s;
+            .dish-name{
+                h2{
+                    align-items: flex-start;
+                }
+            }
+            .price{
+                margin-top: auto;
+                padding-bottom: 5px;
+            }
             h2{
                 margin: 0;
                 padding: 0 .5rem;
                 font-size: 14px;
+                line-height: 1.5;
             }
             p{
                 white-space: nowrap;
@@ -39,31 +55,36 @@
                 text-overflow: ellipsis;
                 padding: 0 .5rem;
             }
-            .btn{
-                display: flex;
-                width: 100%;
-                color: $black;
-                border-bottom-left-radius: 50px !important;
-                height: 35px;
-                h3{
-                    margin: 0;
-                    text-align: center;
-                    display: flex;
-                    margin:0 auto;
-                    align-items: center;
-                    span{
-                        padding-left: 3px;
-                        font-size: 16px;
-                    }
-                }
-                &:hover{
-                    opacity: .9;
-                }
-            }
+
             del{
                 margin: 0  10px;
                 font-size: 14px;
                 color: $primary;
+            }
+        }
+        .btn{
+            display: flex;
+            width: 100%;
+            color: $black;
+            border-bottom-left-radius: 50px !important;
+            height: 35px;
+            position: absolute;
+            bottom: 0;
+            z-index: 10;
+
+            h3{
+                margin: 0;
+                text-align: center;
+                display: flex;
+                margin:0 auto;
+                align-items: center;
+                span{
+                    padding-left: 3px;
+                    font-size: 16px;
+                }
+            }
+            &:hover{
+                opacity: .9;
             }
         }
         .layout::before{
@@ -76,13 +97,14 @@
             width: 100%;
             height: 150px;
             z-index: 1;
+            transition: all .5s;
         }
     }
     img{
         width: 100%;
         height: 100%;
         border-top-right-radius: 50px;
-        border-bottom-left-radius: 50px;
+        border-bottom-left-radius: 35px;
     }
 
 }
@@ -101,6 +123,8 @@
     gap: 1rem;
     flex-direction: column;
     align-items: center;
+    transition: all .5s;
+    color: $black;
 
     .counter{
         margin: auto;
@@ -125,7 +149,7 @@
     .cart-text{
         transition: all .5s !important;
         top: 0 !important;
-        height: 100% !important;
+        height: calc(100% - 35px) !important;
         .btn{
             position: absolute;
             bottom: 0;
@@ -135,7 +159,7 @@
         }
         p{
             white-space: normal !important;
-            margin: 2px;
+            transition: all .5s;
         }
     }
     .social-btn{

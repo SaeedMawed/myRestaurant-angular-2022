@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   header_variable= false;
   @HostListener("document:scroll")
   scrollFunction(){
-    if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100){
+    if(document.body.scrollTop > 70 || document.documentElement.scrollTop > 70){
       this.header_variable=true;
     }
     else {

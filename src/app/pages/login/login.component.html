@@ -1,25 +1,85 @@
-<div class="container mt-5">
-    <div class="card" style="padding: 20px;">
-        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
-            <input type="text"
-            ngModel
-            name="email"
-            id="email"
-            placeholder="Enter your email"
-            class="form-control mb-3"
-            >
+<div class="login-container myContainer">
 
-            <input type="password"
-            ngModel
-            name="userPassword"
-            id="userPassword"
-            placeholder="Enter your password"
-            class="form-control mb-3"
-            >
+    <form class="form login" #loginForm="ngForm" (ngSubmit)="login(loginForm)" [ngClass]="{'hide':showRegister,'show':!showRegister}">
+        <h1 class="form-title">Sign in Form</h1>
+        <input type="text"
+        ngModel
+        name="email"
+        id="email"
+        placeholder="Enter your email"
+        class="form-control mb-3"
+        >
 
-            <input type="submit"
-            value="Login"
-            class="btn btn-outline-primary form-control rounded-0">
-        </form>
-    </div>
+        <input type="password"
+        ngModel
+        name="userPassword"
+        id="userPassword"
+        placeholder="Enter your password"
+        class="form-control mb-3"
+        >
+
+        <input type="submit"
+        value="Login"
+        class="btn btn-primary form-control rounded-0">
+
+        <div class="links d-flex justify-content-between">
+            <a class="forgot-pass" href="">Forgot password?</a>
+            <a class="forgot-pass" (click)="toggleRegister()">Sign up</a>
+        </div>
+
+
+    </form>
+    <form class="form register" #loginForm="ngForm" (ngSubmit)="login(loginForm)" [ngClass]="{'show':showRegister,'hide':!showRegister}">
+        <h1 class="form-title">Register Form</h1>
+        <input type="text"
+        ngModel
+        name="email"
+        id="email"
+        placeholder="Enter your email"
+        class="form-control mb-3"
+        >
+
+        <input type="password"
+        ngModel
+        name="userPassword"
+        id="userPassword"
+        placeholder="Enter your password"
+        class="form-control mb-3"
+        >
+
+        <input type="phone"
+        ngModel
+        name="phone"
+        id="phone"
+        placeholder="Enter your phone number"
+        class="form-control mb-3"
+        >
+
+        <textarea type="address"
+        ngModel
+        name="address"
+        id="address"
+        placeholder="Enter your address"
+        class="form-control mb-3"
+        >
+        </textarea>
+
+        <input type="submit"
+        value="Sigh up"
+        class="btn btn-primary form-control rounded-0" >
+
+
+
+        <div class="links d-flex justify-content-end">
+            <a class="forgot-pass d-flex " style="align-items: center;margin-right: 1rem;"  (click)="toggleRegister()">Go back<span class="material-icons-sharp goBack">
+                keyboard_backspace
+                </span>
+
+
+
+                </a>
+        </div>
+
+
+    </form>
 </div>
