@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   ) {}
 
 
+  placeholderName="Enter Your Email";
   showRegister:boolean=false;
   ngOnInit(): void {}
 
@@ -39,8 +40,25 @@ export class LoginComponent implements OnInit {
     );
   }
 
+  register(registerForm:NgForm){
+
+  }
+
   toggleRegister(){
     this.showRegister = !this.showRegister;
+  }
+
+  clearRegisterForm(form:NgForm){
+    console.log(form.value);
+    //form.resetForm();
+
+    this.toggleRegister();
+  }
+
+  clearLoginForm(form:NgForm){
+    //form.resetForm();
+    this.placeholderName="hhhhh";
+    this.toggleRegister();
   }
 }
 

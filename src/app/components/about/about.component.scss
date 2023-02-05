@@ -33,7 +33,7 @@
         }
         .about-img{
             margin-right: -7rem;
-            filter: blur(10px);
+            //filter: blur(10px);
             overflow: hidden;
             transition: all .8s ease-in-out;
 
@@ -42,7 +42,7 @@
                 margin-top: 1.6rem;
             }
             img {
-                height: 500px;
+                height: 400px;
                 width: 100%;
                 @media screen and (max-width:767px) {
                     height: 300px;

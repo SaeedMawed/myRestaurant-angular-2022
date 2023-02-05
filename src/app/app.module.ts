@@ -15,6 +15,9 @@ import { LocationComponent } from './components/location/location.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 import {MatIconModule} from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav'
+
+
 import { CategoryComponent } from './components/category/category.component';
 
 import { SwiperModule } from 'swiper/angular';
@@ -65,7 +68,8 @@ import { UserService } from './services/user.service';
     MatProgressSpinnerModule,
     FormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    MatSidenavModule
   ],
   providers: [
     AuthGuard,

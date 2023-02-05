@@ -173,6 +173,14 @@ export class CategoryComponent implements OnInit {
       "likes":625
     },
     {
+      "name":"Foul Plate",
+      "price":5,
+      "category_name":"Middle east food",
+      "description":"200 Gram Foul, olive oil, Lemon",
+      "image":"foul.jpg",
+      "likes":212
+    },
+    {
 
       "name":"Caesar Salad",
       "price":5,
@@ -263,8 +271,17 @@ export class CategoryComponent implements OnInit {
             slidesPerView: 4,
             spaceBetween: 15
         },
+        850: {
+            slidesPerView: 5,
+            spaceBetween: 15
+        },
         1050: {
             slidesPerView: 6,
+            spaceBetween: 15
+        }
+        ,
+        1200: {
+            slidesPerView: 7,
             spaceBetween: 15
         }
 

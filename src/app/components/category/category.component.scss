@@ -6,6 +6,7 @@
 .category-container{
     margin-top: 10rem;
     position: relative;
+    padding-top: 10px;
     .text-primary{
         color: $primary !important;
         font-size: 18px;
@@ -23,7 +24,7 @@
     }
     .category-swiper{
         position: sticky;
-        top: 60px;
+        top: 70px;
         background-color: $black;
         z-index: 10;
         box-shadow: 0 4px 2px -2px $primary;
@@ -37,7 +38,10 @@
             padding-top: 10px;
             .swiper-slide{
                 width: 100%;
+                display: flex;
+                justify-content: center;
                 margin: 0 !important;
+                margin-left: -1px !important;
                 border: 0 !important;
                 .category{
                     background-color: transparent;

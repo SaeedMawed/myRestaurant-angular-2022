@@ -6,7 +6,7 @@
         ngModel
         name="email"
         id="email"
-        placeholder="Enter your email"
+        [placeholder]="placeholderName"
         class="form-control mb-3"
         >
 
@@ -24,12 +24,12 @@
 
         <div class="links d-flex justify-content-between">
             <a class="forgot-pass" href="">Forgot password?</a>
-            <a class="forgot-pass" (click)="toggleRegister()">Sign up</a>
+            <a class="forgot-pass" (click)="clearLoginForm(loginForm)">Sign up</a>
         </div>
 
 
     </form>
-    <form class="form register" #loginForm="ngForm" (ngSubmit)="login(loginForm)" [ngClass]="{'show':showRegister,'hide':!showRegister}">
+    <form class="form register" #registerForm="ngForm" (ngSubmit)="register(registerForm)" [ngClass]="{'show':showRegister,'hide':!showRegister}">
         <h1 class="form-title">Register Form</h1>
         <input type="text"
         ngModel
@@ -55,7 +55,7 @@
         class="form-control mb-3"
         >
 
-        <textarea type="address"
+        <textarea type="text"
         ngModel
         name="address"
         id="address"
@@ -71,13 +71,9 @@
 
 
         <div class="links d-flex justify-content-end">
-            <a class="forgot-pass d-flex " style="align-items: center;margin-right: 1rem;"  (click)="toggleRegister()">Go back<span class="material-icons-sharp goBack">
-                keyboard_backspace
-                </span>
-
-
-
-                </a>
+            <a class="forgot-pass d-flex " style="align-items: center;margin-right: 1rem;"  (click)="clearRegisterForm(registerForm)">Go back
+                <span class="material-icons-sharp goBack">keyboard_backspace</span>
+            </a>
         </div>
 
 
