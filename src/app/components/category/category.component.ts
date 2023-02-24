@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y ,SwiperOptions} from 'swiper';
 import { MealComponent } from '../meal/meal.component';
+import { CartService } from 'src/app/services/cart.service';
 
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
@@ -204,11 +205,17 @@ export class CategoryComponent implements OnInit {
   meals=this.mealList;
 
 
+  addToCart=false;
 
-  constructor() { }
+
+  constructor( private cartService:CartService) { }
 
   ngOnInit(): void {
     window.scrollTo(0,0);
+    this.cartService.meal.subscribe(data =>{
+      this.addToCart = data.display;
+      console.log(data);
+    })
   }
 
   setCategoryName(name:string){

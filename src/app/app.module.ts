@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
-import { AdminComponent } from './admin/admin.component';
 import { TopSectionComponent } from './components/top-section/top-section.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AboutComponent } from './components/about/about.component';
@@ -26,24 +25,18 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { LoginComponent } from './pages/login/login.component';
-import { ForbiddenComponent } from './pages/forbidden/forbidden.component';
-import { UserComponent } from './pages/user/user.component';
-
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { AddTocartComponent } from './components/add-tocart/add-tocart.component';
 
 
-import { AuthGuard } from './_auth/auth.guard';
-import { AuthInterceptor } from './_auth/auth.interceptor';
-import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AdminComponent,
     TopSectionComponent,
     HeaderComponent,
     AboutComponent,
@@ -56,8 +49,7 @@ import { UserService } from './services/user.service';
     AboutUsComponent,
     CartComponent,
     LoginComponent,
-    ForbiddenComponent,
-    UserComponent
+    AddTocartComponent
   ],
   imports: [
     BrowserModule,
@@ -71,15 +63,7 @@ import { UserService } from './services/user.service';
     RouterModule,
     MatSidenavModule
   ],
-  providers: [
-    AuthGuard,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass:AuthInterceptor,
-      multi:true
-    },
-    UserService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

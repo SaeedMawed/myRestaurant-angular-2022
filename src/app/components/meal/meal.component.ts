@@ -3,6 +3,8 @@ import { MenuService } from 'src/app/services/menu.service';
 import { CategoryComponent } from '../category/category.component';
 import {Input} from '@angular/core';
 
+import { CartService } from 'src/app/services/cart.service';
+
 @Component({
   selector: 'app-meal',
   templateUrl: './meal.component.html',
@@ -12,7 +14,7 @@ export class MealComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(private cartService:CartService) { }
 
   @Input() meals:any;
   ngOnInit(): void {
@@ -21,5 +23,11 @@ export class MealComponent implements OnInit {
 
   getMeals(){
   }
+
+  showAddToCart(meal){
+    this.cartService.showForm(meal);
+  }
+
+  
 
 }

@@ -1,7 +1,4 @@
 import { Component ,OnInit} from '@angular/core';
-import { Router } from '@angular/router';
-import { UserAuthService } from './services/user-auth.service';
-import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -10,16 +7,17 @@ import { UserService } from './services/user.service';
 })
 export class AppComponent implements OnInit{
 
+  isLoading = true;
+
   constructor(
-    private userAuthService: UserAuthService,
-    private router: Router,
-    public userService: UserService
   ) {}
   title = 'myRestaurant-angular';
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 3000);
 
-  isLoggedIn(){
-    return this.userAuthService.isLoggedIn();
   }
+
 }

@@ -85,7 +85,12 @@ a{
 
 }
 
-
+textarea{
+    resize: none;
+    &:focus-visible{
+        outline: $primary;
+    }
+}
 
 @keyframes fadeInUp {
     from {

@@ -1,0 +1,159 @@
+@import '../../../assets/variable.scss';
+.add-to-cart-container{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    opacity: 0;
+    transition: opacity 5s ease-in-out !important;
+    .bg{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: $black;
+        opacity: .9;
+    }
+    .notif{
+        position: absolute;
+        color: $white;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 5rem;
+    }
+    .meal-box{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: $black;
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        gap: 1rem;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 0 .25rem $primary;
+        min-width: 650px;
+        overflow: hidden;
+        //border: 1px solid $primary;
+        @media screen and (max-width:768px) {
+            grid-template-columns: 1fr;
+            padding: 2rem .5rem;
+            width: 80%;
+            min-width: initial !important;
+        }
+
+        h2{
+            font-size: 1rem;
+        }
+
+        strong{
+            color : $primary;
+        }
+
+
+        .close{
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            background-color: transparent;
+            color: $white;
+            border: none;
+            box-shadow: none;
+            outline: none;
+        }
+        .left-box{
+            width: 100%;
+            height: 300px;
+            position: relative;
+            @media screen and (max-width:768px) {
+                height: 80%;
+                width: auto;
+                margin: auto;
+                padding: 0 1rem;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                border-radius: 15px;
+            }
+
+        }
+        .right-box{
+            color: $white;
+            @media screen and (max-width:768px) {
+                padding: 1rem;
+            }
+            textarea{
+                background-color: $black;
+                color: $white;
+                width: 100%;
+                border-radius: 5px;
+                padding: .25rem;
+            }
+            .form-box{
+                position: absolute;
+                bottom: 2rem;
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+                @media screen and (max-width:768px) {
+                    position: relative;
+                    bottom: auto;
+                    margin-top: 1rem;
+                }
+                .counter{
+                    display: flex;
+                    gap: .75rem;
+                    align-items: center;
+                    
+                    .btn-counter{
+                        background-color: $primary;
+                        font-size: 2rem;
+                        color: $black;
+                        border: none;
+                        width: 2.25rem;
+                        height: 2.25rem;
+                        border-radius: 5px;
+
+                        &:disabled{
+                            opacity: .5;
+                        }
+                    }
+
+                    label{
+                        width: 30px;
+                        text-align: center;
+                    }
+
+                    .submit{
+                        border: 1px solid $primary;
+                        color: $white;
+                        width: 150px;
+                        &:hover{
+                            color:#fff
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+.add-to-cart-container.show{
+     animation: fadein .3s forwards;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

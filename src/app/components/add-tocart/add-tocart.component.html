@@ -1,0 +1,41 @@
+<div class="add-to-cart-container" [ngClass]="{'show':display}">
+    <div class="bg"></div>
+    <h1 *ngIf="isSaved" class="notif">The item has been successfully added to the cart.</h1>
+    <div class="meal-box">
+        <button class="close" (click)="close()">
+            <span class="material-icons-sharp">
+                close
+            </span>
+        </button>
+        <div class="left-box">
+            <img src="../../../assets/imgs/menu/{{meal.image}}" alt="">
+        </div>
+        <div class="right-box">
+            <div class="info">
+                <h1>{{meal.name}}</h1>
+                <p>{{meal.description}}</p>
+                <ng-container *ngIf="meal.offer != null">
+                    <h2>Discount <strong>{{meal.offer}}%</strong></h2>
+                    <h2>Price<del class="mx-2">{{meal.price}}</del><strong>{{meal.price - meal.offer / 100 * meal.price}} $</strong></h2>
+                </ng-container>
+                <ng-container *ngIf="meal.offer == null">
+                    <h2>Price : <strong> {{meal.price}} $</strong></h2>
+                </ng-container>
+                <textarea name="" id="" cols="30" rows="3" placeholder="Please provide any details about your meal preferences" [(ngModel)]="msg"></textarea>
+            </div>
+            <div class="form-box">
+                <div class="counter">
+                    <button (click)="increase()" class="btn-counter ">+</button>
+                    <label>{{count}}</label>
+                    <button (click)="decrease()" class="btn-counter " [disabled]="count == 1">-</button>
+                    <button (click)="submit()" class="btn submit">Submit</button>
+                </div>
+                
+            </div>
+            
+        </div>
+            
+        
+    </div>
+    
+</div>
