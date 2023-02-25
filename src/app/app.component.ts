@@ -1,4 +1,5 @@
 import { Component ,OnInit} from '@angular/core';
+import { CartService } from './services/cart.service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,10 @@ import { Component ,OnInit} from '@angular/core';
 export class AppComponent implements OnInit{
 
   isLoading = true;
+  showCart:boolean;
 
   constructor(
+    private cartService:CartService
   ) {}
   title = 'myRestaurant-angular';
 
@@ -18,6 +21,9 @@ export class AppComponent implements OnInit{
       this.isLoading = false;
     }, 3000);
 
+    this.cartService.showCart.subscribe(data =>{
+      this.showCart = data;
+    })    
   }
 
 }

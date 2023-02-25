@@ -1,0 +1,142 @@
+@import '../../../assets/variable.scss';
+.cart-container{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 21;
+    
+    .bg{
+        opacity: .95;
+        background-color: $black;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+    }
+    .close{
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        box-shadow: 0;
+        font-size: 2.5rem;
+        position: absolute;
+        top: 1rem;
+        right: 610px;
+        color: $white;
+        z-index: 101;
+        @media screen and (max-width:650px) {
+            right: 1rem !important;
+            position: fixed;
+        }
+    }
+    .cart-box{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: calc(600px - 5px);;
+        height: 100%;
+        z-index: 100;
+        background-color: $black;
+        color: $white;
+        box-shadow: 0 0 .25rem $white;
+        padding: 2rem 2rem 0rem 2rem;
+        overflow-y: scroll;
+        overflow-x: visible;
+        @media screen and (max-width:650px) {
+            width: 100% !important;
+        }
+        .msg{
+            padding: 1rem;
+            text-align: center;
+            justify-content: center;
+            margin: auto !important;
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        .title{
+            text-align: center;
+            margin-top: 1rem;
+        }
+        table {
+            overflow: scroll;
+            max-height: 500px;
+            border-collapse: collapse;
+            table td, table th {
+                text-align: center;
+                vertical-align: middle;
+            }
+            tbody{
+                tr{
+                    position: relative;
+                    align-items: center;
+                    border-bottom: 1px solid $primary;
+                    td{
+                        border-bottom: 0;
+                        vertical-align: middle;
+                        padding:.75rem 0 !important;
+                    }
+                    img{
+                        height: 65px;
+                        width: 65px;
+                    }
+                    h2,p{
+                        padding: 0;
+                        margin: 0;
+                        font-size: .8rem;
+                        color: $white;
+                    }
+                    h2{
+                        font-size: 1rem;
+                    }
+                    .trash-icon{
+                        font-size: 1.2rem;
+                        cursor: pointer;
+                        color: $white;
+                    }
+                }
+            }
+        }    
+        .checkout-box{
+            background-color: $black;
+            width: calc(100% - 0rem);
+            padding: 1.5rem 0;
+            position: sticky;
+            bottom: 0;
+            border-top: 1px solid $white;
+            .total-box{
+                display: flex;
+                justify-content: space-between;
+                padding: 0 2rem;
+                
+                h2{
+                    font-size: 1rem;
+                }
+            }
+            .checkout{
+                background-color: $primary;
+                color: $black;
+                border: 0;
+                box-shadow: 0;
+                outline: 0;   
+                font-size: 1.1rem;
+                font-weight: 500;
+                width: 100%;
+                padding: .75rem;
+            }
+        }
+        
+    }
+}
+/*
+.cart-box::-webkit-scrollbar {
+    width: 5px;
+    background-color: green;
+}
+
+.cart-box::-webkit-scrollbar-thumb {
+    background-color: red;
+}
+
+*/

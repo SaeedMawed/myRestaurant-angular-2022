@@ -22,13 +22,16 @@
               <li class="nav-item" style="cursor: pointer;" *ngIf="isLoggedIn()">
                 <a class="nav-link" (click)="logout()" >Logout</a>
               </li>
-              <li class="card-item d-none">
-                <a class="nav-link" routerLink="/cart"><span class="material-icons-sharp card-icon">
-                  add_shopping_cart
-                  </span></a>
+              <li class="cart-item" (click)="toggleCart()">
+                <button class="nav-link" >
+                  <span class="material-icons-sharp cart-icon">
+                    add_shopping_cart
+                  </span>
+                </button>
               </li>
             </ul>
           </div>
         </div>
       </nav>
 </div>
+

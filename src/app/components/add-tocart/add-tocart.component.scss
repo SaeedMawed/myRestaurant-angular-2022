@@ -42,7 +42,7 @@
         @media screen and (max-width:768px) {
             grid-template-columns: 1fr;
             padding: 2rem .5rem;
-            width: 80%;
+            //width: 80%;
             min-width: initial !important;
         }
 
@@ -94,6 +94,9 @@
                 width: 100%;
                 border-radius: 5px;
                 padding: .25rem;
+            }
+            h2{
+                margin: 0;
             }
             .form-box{
                 position: absolute;

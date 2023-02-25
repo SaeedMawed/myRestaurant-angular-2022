@@ -38,7 +38,7 @@ export class AddTocartComponent implements OnInit {
     this.isSaved=true;
     setTimeout(()=>{                           // <<<---using ()=> syntax
       this.cartService.save(this.meal);
-  }, 1500);
+  }, 750);
 
 
   

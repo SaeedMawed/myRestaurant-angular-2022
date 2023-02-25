@@ -70,6 +70,14 @@
             }
         }
     }
+    .cart-item button{
+        background-color: transparent;
+        outline: 0;
+        border: 0;
+        box-shadow: 0;
+        width: 100%;
+        text-align: left;
+    }
 }
 
 .header_change{
@@ -83,7 +91,7 @@
     a{
         color: $light;
     }
-    .card-icon{
+    .cart-icon{
         color: $light  !important;
         margin-top: -2px;
     }
@@ -95,7 +103,7 @@
     }
 }
 
-.card-icon{
+.cart-icon{
     margin-top: -2px;
 }
 

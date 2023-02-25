@@ -17,10 +17,16 @@ export class CartService {
   private behaviorMeal = new BehaviorSubject<any>(this.setting);
   meal = this.behaviorMeal.asObservable();
 
-  private behaviorCart = new BehaviorSubject<any>(null);
+  itemList=JSON.parse(localStorage.getItem('myCart'));
+  
+  private behaviorCart = new BehaviorSubject<any>(this.itemList);
   cart = this.behaviorCart.asObservable();
 
-  itemList:any=[];
+
+  private behaviorShowCart = new BehaviorSubject<boolean>(false);
+  showCart = this.behaviorShowCart.asObservable();
+
+  
 
   constructor() { }
 
@@ -40,9 +46,31 @@ export class CartService {
   }
 
   save(item){
+    this.itemList=JSON.parse(localStorage.getItem('myCart'));
     this.itemList.push(item);
     this.behaviorCart.next(this.itemList);
     this.initForm();
-    console.log(this.itemList);
+    localStorage.setItem('myCart', JSON.stringify(this.itemList));
+  }
+
+  deleteItem(index){
+    this.itemList=JSON.parse(localStorage.getItem('myCart'));
+    this.itemList.splice(index,1)
+    this.behaviorCart.next(this.itemList);
+    localStorage.setItem('myCart', JSON.stringify(this.itemList));
+  }
+
+  getMyCart(){
+    const myList = localStorage.getItem('myCart');
+    return myList;
+  }
+
+
+  toggleCart(){
+    let isDisplayed;
+    this.behaviorShowCart.subscribe(data =>{
+      isDisplayed = data
+    })
+    this.behaviorShowCart.next(!isDisplayed);
   }
 }

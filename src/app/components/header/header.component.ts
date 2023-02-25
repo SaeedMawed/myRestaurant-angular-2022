@@ -2,6 +2,7 @@ import { Component, OnInit,HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserAuthService } from 'src/app/services/user-auth.service';
 import { UserService } from 'src/app/services/user.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,8 @@ export class HeaderComponent implements OnInit {
   constructor(
     private userAuthService: UserAuthService,
     private router: Router,
-    public userService: UserService
+    public userService: UserService,
+    private cartService:CartService
     ) { }
 
   ngOnInit(): void {
@@ -39,4 +41,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/home']);
   }
 
+
+  toggleCart(){
+    this.cartService.toggleCart();
+  }
 }

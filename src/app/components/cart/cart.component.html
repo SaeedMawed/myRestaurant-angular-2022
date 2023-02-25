@@ -1,0 +1,67 @@
+<div class="cart-container">
+    <div class="bg" (click)="toggleCart()">
+        
+    </div>
+    <button class="close" (click)="toggleCart()">
+        <span class="material-icons-sharp">
+            close
+        </span>
+    </button>
+
+    <div class="cart-box">
+        
+        <ng-container *ngIf="items.length == 0" >
+            <h1 class="msg">Your cart is currently empty. Start adding items to your cart to continue shopping.</h1>
+        </ng-container>
+        <ng-container *ngIf="items.length != 0" >
+            <h1 class="title">We are excited to fulfill your order!</h1>
+            <table class="table">
+                <colgroup>
+                    <col span="1" style="width: 80px;">
+                    <col span="1" style="width: 120px;">
+                    <col span="1" style="width: 30px;">
+                    <col span="1" style="width: 30px;">
+                    <col span="1" style="width: 30px;">
+                    <col span="1" style="width: 30px;">
+                </colgroup>
+                <tbody>
+                    <tr *ngFor="let item of items;let i = index">
+                        <td><img src="./assets/imgs/menu/{{item.image}}" alt=""></td>
+                        <td>
+                            <div class="group">
+                                <h2>{{item.name}}</h2>
+                                <p>{{item.note}}</p>
+                            </div>
+                        </td>
+                        <td>
+                            <h2>{{item.count}}</h2>
+                        </td>
+                        <td>
+                            <h2 *ngIf="item.offer != null">{{item.price - item.offer/100*item.price}}$</h2>
+                            <h2 *ngIf="item.offer == null">{{item.price}}$</h2>
+                        </td>
+                        <td>
+                            <h2 *ngIf="item.offer != null">{{item.count * (item.price - item.offer/100*item.price)}}$</h2>
+                            <h2 *ngIf="item.offer == null">{{item.count * item.price}}$</h2>
+                        </td>
+                        <td class="delete" (click)="deleteItem(i)">
+                            <span class="material-icons-sharp trash-icon">
+                                delete
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="checkout-box">
+                <div class="total-box">
+                    <h2>Total Price</h2>
+                    <h2 class="price">{{total}}$</h2>
+                </div>
+                <button class="checkout">Check out</button>
+            </div>
+            
+        </ng-container>
+        
+    </div>
+    
+</div>

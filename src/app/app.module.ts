@@ -23,8 +23,8 @@ import { SwiperModule } from 'swiper/angular';
 import { MealComponent } from './components/meal/meal.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
-import { CartComponent } from './pages/cart/cart.component';
 import { LoginComponent } from './pages/login/login.component';
+import { CartComponent } from './components/cart/cart.component';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
