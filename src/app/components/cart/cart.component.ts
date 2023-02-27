@@ -44,5 +44,6 @@ export class CartComponent implements OnInit {
 
   deleteItem(item){
     this.cartService.deleteItem(item);
+    this.getTotal();
   }
 }
