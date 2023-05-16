@@ -36,6 +36,9 @@
         .swiper-wrapper{
             gap: 1rem;
             padding-top: 10px;
+            @media screen and (max-width:480px) {
+                gap:.5rem;
+            }
             .swiper-slide{
                 width: 100%;
                 display: flex;
@@ -43,16 +46,33 @@
                 margin: 0 !important;
                 margin-left: -1px !important;
                 border: 0 !important;
+                @media screen and (max-width:480px) {
+                    margin-left: 5px !important;
+                }
                 .category{
                     background-color: transparent;
                     border: 0;
                     color: $light;
+                    img{
+                        width: 135px;
+                        height: 135px;
+                        border-radius: 50%;
+                        margin-bottom: 2px;
+                        @media screen and (max-width:480px) {
+                            width: 90px;
+                            height: 90px;
+                        }
+                    }
+                    .title {
+                        font-size: 14px;
+                        @media screen and (max-width:480px) {
+                            font-size: 12px;
+                        }
+                    }
                     &:hover ,&:active{
-
                         img{
                             outline: 5px solid $primary;
                             transition: all .3s;
-
                         }
                         .title {
                             color: $primary;
@@ -69,31 +89,25 @@
                     }
                 }
             }
-            img{
-                width: 135px;
-                height: 135px;
-                border-radius: 50%;
-                margin-bottom: 2px;
-                @media screen and (max-width:767px) {
-                    //width: 125px;
-                    //height: 125px;
-                }
-            }
-            .title {
-                font-size: 14px;
-            }
+            
         }
 
         .swiper-button-white {
-            position: absolute;
-            top: 120px;
+            //position: absolute;
+            //top: 120px;
             width: 30px;
             height: 50px;
 
             color: $black;
             border-radius: 5px;
             background-color: $primary;
-            transform: translateY(-50%);
+            //transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            @media screen and (max-width:480px) {
+                position: absolute;
+                top: 78px;
+            }
             &:after{
                 font-size: 30px;
                 color: $black;

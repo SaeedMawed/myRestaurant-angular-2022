@@ -37,11 +37,11 @@
                             <h2>{{item.count}}</h2>
                         </td>
                         <td>
-                            <h2 *ngIf="item.offer != null">{{item.price - item.offer/100*item.price}}$</h2>
+                            <h2 *ngIf="item.offer != null">{{ (item.price - item.offer/100*item.price).toFixed(1)}}$</h2>
                             <h2 *ngIf="item.offer == null">{{item.price}}$</h2>
                         </td>
                         <td>
-                            <h2 *ngIf="item.offer != null">{{item.count * (item.price - item.offer/100*item.price)}}$</h2>
+                            <h2 *ngIf="item.offer != null">{{(item.count * (item.price - item.offer/100*item.price)).toFixed(1)}}$</h2>
                             <h2 *ngIf="item.offer == null">{{item.count * item.price}}$</h2>
                         </td>
                         <td class="delete" (click)="deleteItem(i)">

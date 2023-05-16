@@ -42,9 +42,12 @@
         letter-spacing: 3px;
 
         @media screen and (max-width:767px){
-            font-size: 20px;
+            font-size: 16px;
             letter-spacing: 2px;
             color: $primary !important;
+            span{
+                letter-spacing: 0 !important;
+            }
         }
     }
     a{

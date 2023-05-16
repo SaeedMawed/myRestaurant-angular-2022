@@ -270,7 +270,7 @@ export class CategoryComponent implements OnInit {
             slidesPerView: 2,
             spaceBetween: 15
         },
-        500: {
+        350: {
             slidesPerView: 3,
             spaceBetween: 15
         },

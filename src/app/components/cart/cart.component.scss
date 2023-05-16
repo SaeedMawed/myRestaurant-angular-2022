@@ -58,6 +58,10 @@
         .title{
             text-align: center;
             margin-top: 1rem;
+            font-size: 1.2rem;
+            @media screen and (max-width:480px) {
+                font-size: 1rem;
+            }
         }
         table {
             overflow: scroll;
@@ -72,6 +76,9 @@
                     position: relative;
                     align-items: center;
                     border-bottom: 1px solid $primary;
+                    &:last-child{
+                        border-bottom: 0;
+                    }
                     td{
                         border-bottom: 0;
                         vertical-align: middle;
@@ -80,15 +87,22 @@
                     img{
                         height: 65px;
                         width: 65px;
+                        @media screen and (max-width:480px) {
+                            height: 50px;
+                            width: 50px;
+                        }
                     }
                     h2,p{
                         padding: 0;
                         margin: 0;
-                        font-size: .8rem;
+                        font-size: 1rem;
                         color: $white;
+                        @media screen and (max-width:480px) {
+                            font-size: .8rem;   
+                        }
                     }
                     h2{
-                        font-size: 1rem;
+                        //font-size: 1rem;
                     }
                     .trash-icon{
                         font-size: 1.2rem;

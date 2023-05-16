@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
 
   clearLoginForm(form:NgForm){
     //form.resetForm();
-    this.placeholderName="hhhhh";
+    //this.placeholderName="hhhhh";
     this.toggleRegister();
   }
 }
